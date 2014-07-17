@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="no-cache" http-equiv="Pragma">
+        <meta content="-1" http-equiv="Expires">
+        <meta content="no-cache" http-equiv="Cache-Control">
+        <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,target-densitydpi=high-dpi">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+        <link rel="apple-touch-icon" href="imgs/icon.png" />
+        <link rel="apple-touch-icon-precomposed" href="imgs/icon.png" />
+        <link rel="apple-touch-startup-image" href="startup.png" />
+        <link rel="stylesheet" href="css/scroller.css" type="text/css" />
+        <link rel="stylesheet" href="css/hyy.css" type="text/css" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <script src="js/hyy.cfg.js">
+        </script>
+        <script src="js/hyy.main.js">
+        </script>
+        <script src="js/iscroll.js">
+        </script>
+        <script src="js/jquery.js">
+        </script>
+        <script src="js/json.js">
+        </script>
+        <script src="js/ssdjs.js">
+        </script>
+        <script src="src/biz/login.js">
+        </script>
+        <script src="src/util/sys.js">
+        </script>
+        <script src="src/util/tpl.js">
+        </script>
+        <title>嗨呀呀</title>
+    </head>
+    <body>
+        <style type="text/css">
+            body {
+                background: white;
+                color: white;
+                padding: 0;
+                margin: 0;
+                overflow: hidden;
+            }
+        </style>
+        <div id="main" style="z-index:1">
+        </div>
+        <div id="pop" style="display:none; z-index:20">
+        </div>
+        <div id="up" style="display:none ;z-index:30">
+        </div>
+        <div id="confirm" style="display:none; z-index:40">
+        </div>
+        <div id="logIn" style="z-index:10">
+        </div>
+        <div id="iLoading" style="display:none">
+            <div id="loadingBg">
+            </div>
+            <div id="loadingContent">
+            </div>
+        </div>
+        <script>
+            
+            function main(){
+                init();
+                hyy.biz.login.init();
+            }
+            
+            document.addEventListener('DOMContentLoaded', main, false);
+        </script>
+    </body>
+</html>

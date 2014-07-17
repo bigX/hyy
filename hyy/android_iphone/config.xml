@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<widget appId="04" channelCode="000" height="480" pid="" sreensize="4.5" version="01.00.0717" viewmode="application" widgetId="" width="320">
+	
+	<name>嗨呀呀</name>
+	<description/>
+	<author email=""> </author>
+	<icon src="icon.png"/>
+	<license href=""/>
+	<content encoding="utf-8" src="app/index.html"/>
+	<updateurl/>
+	<logserverip/> 
+	<showmyspace>false</showmyspace>
+	<obfuscation>false</obfuscation>
+	<bgcolor>#fefefe</bgcolor>
+	<orientation>5</orientation>
+</widget>
