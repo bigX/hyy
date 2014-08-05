@@ -89,7 +89,7 @@ loginLoading.prototype = {
             ctx.clearRect(0, 0, canvas.width / 2, canvas.height / 2 - 20);
             //  var lineWidth = me.circleLineWidth;
             var img = new Image();
-            img.src = hl.url.img("login/load.png");
+            img.src = hyy.url.img("login/load.png");
             img.onload = function() {
                 ctx.rotate(30 * Math.PI / 180);
                 ctx.drawImage(img, -19, -19, 38, 38);
