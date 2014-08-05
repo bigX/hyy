@@ -1,7 +1,7 @@
 /**
  * 入口文件
  */
-function init(){
+function init() {
     console.log("init");
     viewport();
     redraw();
@@ -12,14 +12,14 @@ function init(){
 /**
  * 屏幕尺寸
  */
-function hyySize(){
+function hyySize() {
     return {
         x: window['innerWidth'] || document.documentElement.clientWidth,
         y: window['innerHeight'] || document.documentElement.clientHeight
     };
 }
 
-function hyyscreen(){
+function hyyscreen() {
     return {
         sw: window.screen.width,
         sh: window.screen.height,
@@ -28,7 +28,7 @@ function hyyscreen(){
     };
 }
 
-function vpWidth(){
+function vpWidth() {
     var w = 640;
     if ((/ipad/gi).test(navigator.appVersion)) {
         // w = 1024;
@@ -36,7 +36,7 @@ function vpWidth(){
     if (!ssdjs.browser.isTouch()) {
         w = 1024;
     }
-    
+
     var size = ssdjs.browser.size();
     w = size.x;
     if (size.x < 640) {
@@ -48,10 +48,10 @@ function vpWidth(){
     return w;
 }
 
-function viewport(revp){
+function viewport(revp) {
     var screen = hyyscreen();
     var isresize = revp || false;
-    
+
     var size = screen;
     var _w = 640;
     var _nw = 640;
@@ -76,14 +76,14 @@ function viewport(revp){
     }
     var vp = "width=" + _w + ",target-densitydpi=high-dpi" + ",initial-scale=" + scale + ",maximum-scale=" + scale + ",minimum-scale=" + scale;
     document.getElementById("viewport").content = vp;
-    
+
 }
 
-function redraw(){
+function redraw() {
 
     // 调整窗口
     var size = hyySize();
-    
+
     // 游戏宽度
     var hyyH = size.y;
     var hyyW = size.x;
@@ -91,29 +91,34 @@ function redraw(){
     if (hyyW >= max) {
         hyyW = max;
     }
-    
+
     // body
     $("body").css("height", size.y + "px");
-    
+
     // main
     var main = $("#main");
-	main.css("background", "#fff");
-	main.css("top", "0px");
+    main.css("background", "#fff");
+    main.css("top", "0px");
     main.css("left", "0px");
     main.css("height", hyyH + "px");
     main.css("width", hyyW + "px");
 
-var logIn = $("#logIn");
-	logIn.css("top", "0px");
+    var logIn = $("#logIn");
+    logIn.css("top", "0px");
     logIn.css("left", "0px");
     logIn.css("height", hyyH + "px");
     logIn.css("width", hyyW + "px");
 
-var answer = $("#answer");
+    var answer = $("#answer");
     answer.css("top", "0px");
     answer.css("left", "0px");
     answer.css("height", hyyH + "px");
     answer.css("width", hyyW + "px");
-    
+
+    var pop = $("#pop");
+    pop.css("top", "0px");
+    pop.css("left", "0px");
+    pop.css("height", hyyH + "px");
+    pop.css("width", hyyW + "px");
 
 }
