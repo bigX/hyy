@@ -19,7 +19,15 @@
         </script>
         <script src="src/biz/login.js">
         </script>
+        <script src="src/biz/register.js">
+        </script>
         <script src="src/biz/answer.js">
+        </script>
+        <script src="src/data/user.js">
+        </script>
+        <script src="src/util/diag.js">
+        </script>
+        <script src="src/util/loading.js">
         </script>
         <script src="src/util/sys.js">
         </script>
@@ -33,9 +41,10 @@
         </div>
         <div id="logIn" style="z-index:100">
         </div>
-        <div id="answer" style="display:none; z-index:20">
         <div id="pop" style="display:none; z-index:20">
         </div>
+        <div id="answer" style="display:none; z-index:20">
+
         <div id="up" style="display:none ;z-index:30">
         </div>
         <div id="confirm" style="display:none; z-index:40">
@@ -50,8 +59,10 @@
         <script>
             function main(){
                 init();
-             // hyy.biz.login.init();
-                 hyy.biz.answer.initView();
+            //  hyy.biz.login.init();
+              //   hyy.biz.answer.initView();
+
+                hyy.biz.register.initView();
             }
             document.addEventListener('DOMContentLoaded', main, false);
         </script>
