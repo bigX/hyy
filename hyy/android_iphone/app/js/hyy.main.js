@@ -2,6 +2,7 @@
  * 入口文件
  */
 function init(){
+    console.log("init");
     viewport();
     redraw();
     hyy.cfg.winW = window['innerWidth'] || document.documentElement.clientWidth;
@@ -107,16 +108,12 @@ var logIn = $("#logIn");
     logIn.css("left", "0px");
     logIn.css("height", hyyH + "px");
     logIn.css("width", hyyW + "px");
+
+var answer = $("#answer");
+    answer.css("top", "0px");
+    answer.css("left", "0px");
+    answer.css("height", hyyH + "px");
+    answer.css("width", hyyW + "px");
     
-    // pop  
-    var pop = $("#pop");
-    pop.css("top", "0px");
-    pop.css("left", "0px");
-    pop.css("height", (hyyH - 98) + "px");
-    
-    // up  
-    var up = $("#up");
-    up.css("top", "0px");
-    up.css("left", "0px");
-    up.css("height", hyyH + "px");
+
 }

@@ -3,50 +3,64 @@ hyy.biz = (hyy.biz || {});
 
 hyy.biz.login = {
     init: function(){
+        console.log("longin.init");
     
         var lgMain = hyy.$("logIn");
-        
-        var aa = window['innerWidth'] || document.documentElement.clientWidth;
-        var bb = window['innerHeight'] || document.documentElement.clientHeight
-        
+        lgMain.style.display = "";
+
         var size = hyy.sys.winSize();
-        
-//        hyy.tpl.toast({
-//            msg: JSON.stringify(size)
-//        });
-		
-		 hyy.tpl.toast({
-            msg: aa+"___"+bb 
-        });
-        
-        var _x = 0;
-        var _y = 0;
-        
-        
+
         var ico0 = ssdjs.dom.img(0, 0, 119, 165, hyy.url.img("ico_0.png"));
         lgMain.appendChild(ico0);
         var ico1 = ssdjs.dom.img(size.w - 119, 0, 119, 165, hyy.url.img("ico_1.png"));
         lgMain.appendChild(ico1);
+
+        var title = ssdjs.dom.img((size.w - 565)/2, 220, 565, 126, hyy.url.img("login_title.png"));
+        lgMain.appendChild(title);
+
+        var content = ssdjs.dom.img((size.w - 468)/2, 390, 468, 131, hyy.url.img("login_content.png"));
+        lgMain.appendChild(content);
         
-        var margin = 20;
-        var inputId = ssdjs.dom.input(margin, 600, size.w - margin * 2, 90);
-        inputId.className = "bOff";
+        var margin = 120;
+        var inputId = ssdjs.dom.input(margin, 540, size.w - margin * 2, 64);
+        inputId.id = "id";
+
+        inputId.style.fontSize = "30px" ;
+        inputId.className = "bOff tc";
         lgMain.appendChild(inputId);
-        var inputPw = ssdjs.dom.input(margin, 700, size.w - margin * 2, 90);
+        var inputPw = ssdjs.dom.input(margin, 616, size.w - margin * 2, 64);
+        inputPw.id= "pw";
+        inputPw.className = "bOff tc";
+        inputPw.style.fontSize = "30px" ;
+        inputPw.style.type = "password";
         lgMain.appendChild(inputPw);
         
         
         var btnLogin = hyy.tpl.btn.Button({
-            x: 100,
-            y: 800,
+            x: 192,
+            y: 700,
+            w: 85,
+            h: 40,
+            bgOn: 'logInOn.png',
+            bgOff: 'logInOff.png',
+            fun: this.req
+
+        });
+        
+        lgMain.appendChild(btnLogin);
+
+
+        var btnRegister = hyy.tpl.btn.Button({
+            x: size.w - 192 -85,
+            y: 700,
             w: 85,
             h: 40,
             bgOn: 'logInOn.png',
             bgOff: 'logInOff.png',
             fun: null
         });
-        
-        lgMain.appendChild(btnLogin);
+
+        lgMain.appendChild(btnRegister);
         
     },
     /*

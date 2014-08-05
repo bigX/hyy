@@ -1,15 +1,22 @@
-﻿/**边框**/
+body {
+    background: white;
+    color: white;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+/**边框**/
 .bOn {
-    border:8px solid #ed008c;         
-	padding:6px;
+    border:5px solid #ed008c;
+	/*padding:6px;*/
 }
 
 .bOff {
-    border:8px solid #f49bc1;        
-	padding:6px; 
+    border:5px solid #f49bc1;
+	/*padding:6px;*/
 }
 
 /**背景色**/
-.cc{ background:#ccc;} 
-
-/**/
+.cc{ background:#ccc;}
+/**文字颜色**/
+.tc { color:#f49bc1;}

@@ -12,4 +12,4 @@ hyy.cfg = {
     lang: "cn",
     winW: 640,
     winH: 960
-}
+};
