@@ -2,9 +2,9 @@ var hyy = (hyy || {});
 hyy.biz = (hyy.biz || {});
 
 hyy.biz.login = {
-    init: function(){
+    init: function () {
         console.log("longin.init");
-    
+
         var lgMain = hyy.$("logIn");
         lgMain.style.display = "";
 
@@ -15,27 +15,28 @@ hyy.biz.login = {
         var ico1 = ssdjs.dom.img(size.w - 119, 0, 119, 165, hyy.url.img("ico_1.png"));
         lgMain.appendChild(ico1);
 
-        var title = ssdjs.dom.img((size.w - 565)/2, 220, 565, 126, hyy.url.img("login_title.png"));
+        var title = ssdjs.dom.img((size.w - 565) / 2, 220, 565, 126, hyy.url.img("login_title.png"));
         lgMain.appendChild(title);
 
-        var content = ssdjs.dom.img((size.w - 468)/2, 390, 468, 131, hyy.url.img("login_content.png"));
+        var content = ssdjs.dom.img((size.w - 468) / 2, 390, 468, 131, hyy.url.img("login_content.png"));
         lgMain.appendChild(content);
-        
+
         var margin = 120;
         var inputId = ssdjs.dom.input(margin, 540, size.w - margin * 2, 64);
         inputId.id = "id";
 
-        inputId.style.fontSize = "30px" ;
+        inputId.style.fontSize = "30px";
         inputId.className = "bOff tc";
         lgMain.appendChild(inputId);
         var inputPw = ssdjs.dom.input(margin, 616, size.w - margin * 2, 64);
-        inputPw.id= "pw";
+        inputPw.id = "pw";
+        inputPw.type = "password";
         inputPw.className = "bOff tc";
-        inputPw.style.fontSize = "30px" ;
+        inputPw.style.fontSize = "30px";
         inputPw.style.type = "password";
         lgMain.appendChild(inputPw);
-        
-        
+
+
         var btnLogin = hyy.tpl.btn.Button({
             x: 192,
             y: 700,
@@ -43,15 +44,17 @@ hyy.biz.login = {
             h: 40,
             bgOn: 'logInOn.png',
             bgOff: 'logInOff.png',
-            fun: this.req
-
+            fun: function () {
+                hyy.biz.login.req({id: $("#id").val(),
+                    pw: $("#pw").val()});
+            }
         });
-        
+
         lgMain.appendChild(btnLogin);
 
 
         var btnRegister = hyy.tpl.btn.Button({
-            x: size.w - 192 -85,
+            x: size.w - 192 - 85,
             y: 700,
             w: 85,
             h: 40,
@@ -61,13 +64,13 @@ hyy.biz.login = {
         });
 
         lgMain.appendChild(btnRegister);
-        
+
     },
     /*
      * 请求登录
      */
-    req: function(p){
-    
+    req: function (p) {
+        console.log(JSON.stringify(p));
         if (navigator.onLine) {
             //正常工作
             console.log("网络正常");
@@ -78,7 +81,7 @@ hyy.biz.login = {
         }
         p = (p || {});
         var loadstat = hyy.diag.loginLoading.show();
-        
+
         // URL
         var url = hyy.url.api("User/LoginInfoJosn");
         var data = "";
@@ -88,15 +91,15 @@ hyy.biz.login = {
         if (p.pw != null) {
             data += "&txtPWD=" + p.pw;
         }
-        
-        var success = function(result){
-        
+
+        var success = function (result) {
+
             hyy.diag.loginLoading.hide(loadstat);
             if (result.LoginInfo == "ErrorPwd") {
                 return hyy.diag.alert({
                     m: "密码错误"
                 });
-                
+
             }
             if (result.LoginInfo == "NoUser") {
                 return hyy.diag.alert({
@@ -106,7 +109,7 @@ hyy.biz.login = {
             if (result.LoginInfo == "OK") {
                 $("#logIn").hide();
                 $("#logIn").empty();
-                
+
                 // 初始化用户信息
                 hyy.data.user.set({
                     user: {
@@ -120,18 +123,18 @@ hyy.biz.login = {
                         birthday: result.birthday
                     }
                 });
-                
+
                 // 数据库初始化
                 // setTimeout(hyy.data.database.init(), 1000);
                 // 开始心跳
-                hyy.biz.hb.hb.start();
-                
+                //  hyy.biz.hb.hb.start();
+
                 // TODO 这里要整合一下。
-                hyy.biz.user.req();
-                
+                //  hyy.biz.user.req();
+
             }
         };
-        var error = function(result){
+        var error = function (result) {
             hyy.diag.loginLoading.hide(loadstat);
             hyy.diag.alert({
                 m: "登陆失败"
