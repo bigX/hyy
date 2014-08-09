@@ -40,13 +40,16 @@ hyy.biz.login = {
         var btnLogin = hyy.tpl.btn.Button({
             x: 192,
             y: 700,
-            w: 85,
-            h: 40,
-            bgOn: 'logInOn.png',
-            bgOff: 'logInOff.png',
+            w: 94,
+            h: 52,
+            bgOn: 'login/login_on.png',
+            bgOff: 'login/login_off.png',
             fun: function () {
-                hyy.biz.login.req({id: $("#id").val(),
-                    pw: $("#pw").val()});
+              //  hyy.biz.login.req({id: $("#id").val(),
+               //     pw: $("#pw").val()});
+                $("#logIn").empty();
+                $("#logIn").hide();
+                hyy.biz.index.initView();
             }
         });
 
@@ -56,10 +59,10 @@ hyy.biz.login = {
         var btnRegister = hyy.tpl.btn.Button({
             x: size.w - 192 - 85,
             y: 700,
-            w: 85,
-            h: 40,
-            bgOn: 'logInOn.png',
-            bgOff: 'logInOff.png',
+            w: 94,
+            h: 52,
+            bgOn: 'login/register_on.png',
+            bgOff: 'login/register_off.png',
             fun: null
         });
 
@@ -124,13 +127,6 @@ hyy.biz.login = {
                     }
                 });
 
-                // 数据库初始化
-                // setTimeout(hyy.data.database.init(), 1000);
-                // 开始心跳
-                //  hyy.biz.hb.hb.start();
-
-                // TODO 这里要整合一下。
-                //  hyy.biz.user.req();
 
             }
         };
