@@ -3,6 +3,22 @@
  */
 var hyy = (hyy || {});
 hyy.diag = {
+    pop : {
+        show : function(p) {
+            $("#pop").css("display", "");
+
+        },
+        hide : function(p) {
+            $("#pop").hide();
+            $("#pop").empty();
+        },
+        clear : function(p) {
+            $("#pop").empty();
+        },
+        add : function(p) {
+            $("#pop").append(p);
+        }
+    },
     alert: function (p) {
 
         var infMain = hyy.sys.hyy$("info");
