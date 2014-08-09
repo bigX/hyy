@@ -20,3 +20,46 @@ body {
 .cc{ background:#ccc;}
 /**文字颜色**/
 .tc { color:#f49bc1;}
+
+/**字体大小**/
+.sMicro{
+    font-size: 16px;
+}
+.sSmall{
+    font-size: 18px;
+}
+.sLte{
+    font-size: 22px;
+}
+.sMid{
+    font-size: 24px;
+}
+.sBiga{
+    font-size: 30px;
+}
+
+.sBig{
+    font-size: 36px;
+}
+.sBold {
+    font-weight: bold;
+}
+/**align**/
+.alignC{
+    text-align:center;
+}
+.alignR{
+    text-align:right;
+}
+.alignL{
+    text-align:left;
+}
+.ofHide {
+    overflow:hidden;
+}
+/**位置**/
+.absolute {
+    position:absolute;
+    left:0px;
+    top:0px;
+}
