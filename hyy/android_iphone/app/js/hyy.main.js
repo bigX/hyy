@@ -93,32 +93,32 @@ function redraw() {
     }
 
     // body
-    $("body").css("height", size.y + "px");
+    $("body").css("height", 960 + "px");
 
     // main
     var main = $("#main");
     main.css("background", "#fff");
     main.css("top", "0px");
     main.css("left", "0px");
-    main.css("height", hyyH + "px");
-    main.css("width", hyyW + "px");
+    main.css("height", 960 + "px");
+    main.css("width", 640 + "px");
 
     var logIn = $("#logIn");
     logIn.css("top", "0px");
     logIn.css("left", "0px");
-    logIn.css("height", hyyH + "px");
-    logIn.css("width", hyyW + "px");
+    logIn.css("height", 960 + "px");
+    logIn.css("width", 640 + "px");
 
     var answer = $("#answer");
     answer.css("top", "0px");
     answer.css("left", "0px");
-    answer.css("height", hyyH + "px");
-    answer.css("width", hyyW + "px");
+    answer.css("height", 960 + "px");
+    answer.css("width", 640 + "px");
 
     var pop = $("#pop");
     pop.css("top", "0px");
     pop.css("left", "0px");
-    pop.css("height", hyyH + "px");
-    pop.css("width", hyyW + "px");
+    pop.css("height", 960 + "px");
+    pop.css("width", 640 + "px");
 
 }
