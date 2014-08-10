@@ -1,9 +1,9 @@
 body {
-    background: white;
-    color: white;
     padding: 0;
     margin: 0;
     overflow: hidden;
+    color: #5b2e0f;
+    background-Color: black;
 }
 /**边框**/
 .bOn {
@@ -20,6 +20,8 @@ body {
 .cc{ background:#ccc;}
 /**文字颜色**/
 .tc { color:#f49bc1;}
+
+
 
 /**字体大小**/
 .sMicro{
